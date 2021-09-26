@@ -1,0 +1,78 @@
+@font-face {
+	font-family: 'zillaslab';
+	src: url('/lib/ZillaSlab.ttf');
+}
+
+* {
+	box-sizing: border-box;
+	font-family: zillaslab;
+	margin: 0;
+	border: 0;
+	padding: 0;
+}
+
+body {
+	background: $body-background;
+	overflow-x: hidden;
+}
+
+p{
+	font-family: zillaslab;
+	font-size: 110%;
+	font-weight: bold;
+}
+
+.subtitle{
+	font-family: zillaslab;
+	font-size: 159%;
+	font-weight: bold;
+}
+
+.align-center {
+	text-align: center;
+}
+
+.footer{
+	position: absolute;
+	bottom: 0;
+	text-align: center;
+	background: #4d4d4d;
+	padding: 10px;
+	color: #e5efef;
+	width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+	.table {
+		table, thead, tbody, th, td, tr {
+			display: block;
+		}
+
+		thead {
+			tr {
+				display: none;
+			}
+		}
+
+		td {
+			border: none;
+			border-bottom: 1px solid #eee;
+			position: relative;
+			padding-left: 50%;
+			white-space: normal;
+			text-align:left;
+
+			&:before {
+				position: absolute;
+				top: 6px;
+				left: 6px;
+				width: 45%;
+				padding-right: 10px;
+				white-space: nowrap;
+				text-align:left;
+				font-weight: bold;
+				content: attr(data-title);
+			}
+		}
+	}
+}

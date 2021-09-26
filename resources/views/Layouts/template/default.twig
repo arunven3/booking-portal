@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/lib/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="/dist/style.min.css" />
+    {% block head %} {% endblock %}
+</head>
+
+<body data-page="{% block page %}{% endblock %}">
+
+    <div class="alert error">
+        <div class="head">
+            <div class="addon">&#x26D4;</div>
+            <div class="title"> Error </div>
+            <span class="close">&#10006;</span>
+        </div>
+        <div class="content">
+            <div class="body">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="alert success">
+        <div class="head">
+            <div class="addon">&#10004;</div>
+            <div class="title">Success!</div>
+            <span class="close">&#10006;</span>
+        </div>
+        <div class="content">
+            <div class="body">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="alert warning">
+        <div class="head">
+            <div class="addon">&#9888;</div>
+            <div class="title"> Warning </div>
+            <span class="close">&#10006;</span>
+        </div>
+        <div class="content">
+            <div class="body">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+{% block content %}
+{% endblock %}
+{% block footer %}
+    {% set footer %}
+        <footer class="footer">
+
+        </footer>
+    {% endset %}
+{% endblock %}
+    <script src="/lib/jquery.min.js"></script>
+    <script src="/lib/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/dist/script.min.js"></script>
+</body>
+</html>
