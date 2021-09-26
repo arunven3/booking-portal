@@ -1,0 +1,58 @@
+<div class="modal fade" id="modalAddProperty" tabindex="-1" role="dialog" aria-labelledby="modalAddProperty" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered " role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="form">
+          <form autocomplete="off" id="frmRegisterProperty">
+            <div class="form-group">
+              <div class="input-group required" data-message="Property name should be entered">
+                <span class="input-group-addon"><i class="fa fa-hotel"></i></span>
+                <input type="text" class="form-control" name="txtPropertyName" placeholder="Enter the property name">
+                <span class="error-box"></span>
+              </div>
+              <div class="input-group required" data-message="Property size should be entered in the square feet only">
+                <span class="input-group-addon"><i class="fa fa-ruler"></i></span>
+                <input type="text" class="form-control" name="txtPropertySize" placeholder="Enter the property full size in square feet">
+                <span class="error-box"></span>
+              </div>
+              <div class="input-group select required" data-message="Property type should be entered">
+                <span class="input-group-addon"><i class="fa fa-city"></i></span>
+                <select class="form-control" name="txtPropertyType">
+                  <option label="Select property type" value="" disabled selected>Select property type</option>
+                  <option value="RentalRoom">room rental services</option>
+                </select>
+                <span class="error-box"></span>
+              </div>
+              <div class="input-group required" data-message="Property description should be entered">
+                <span class="input-group-addon"><i class="fa  fa-clipboard-list"></i></span>
+                <input type="text" class="form-control" name="txtPropertyDescription" placeholder="Describe about your property">
+                <span class="error-box"></span>
+              </div>
+              <div class="input-group required" data-message="Property full address Should be entered">
+                <span class="input-group-addon"><i class="fa fa-street-view"></i></span>
+                <input type="text" class="form-control" name="txtPropertyAddress" placeholder="Enter the property full address">
+                <span class="error-box"></span>
+              </div>
+              <div class="input-group required" data-message="Property longitude should be entered">
+                <span class="input-group-addon"><i class="fa fa-map-marker-alt"></i></span>
+                <input type="text" class="form-control" name="txtPropertyLongitude" placeholder="Enter the property longitude">
+                <span class="error-box"></span>
+              </div>
+              <div class="input-group required" data-message="Property latitude should be entered">
+                <span class="input-group-addon"><i class="fa fa-map-marker-alt"></i></span>
+                <input type="text" class="form-control" name="txtPropertyLatitude" placeholder="Enter the property latitude">
+                <span class="error-box"></span>
+              </div>
+
+            </div>
+            <div class="row">
+              <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+              <span class="col-2"></span>
+              <button type="button" data-role="submit" class="btn btn-dark">Add property</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

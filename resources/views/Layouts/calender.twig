@@ -1,0 +1,18 @@
+{% extends 'template/default.twig' %}
+{% block title %}Check availability{% endblock %}
+{% block page %}booking-availablity{% endblock %}
+  {% block head %}
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/lib/vanilla-calendar-min.css">
+    <script src="/lib/vanilla-calendar.js"></script>
+  {% endblock %}
+{% block content %}
+  {%  include'template/navigation.twig' with  {'navlink' : false } %}
+  <section class="calender-section">
+
+    <div class="content">
+      <h2>VanillaCalendar</h2>
+      <div id="myCalendar" class="vanilla-calendar" style="margin-bottom: 20px"></div>
+    </div>
+  </section>
+{% endblock %}

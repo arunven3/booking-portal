@@ -1,0 +1,64 @@
+{% extends 'template/default.twig' %}
+{% block page_tittle %}Dashboard{% endblock %}
+{% block page %}Owner-dashboard{% endblock %}
+{% block content %}
+  <div class="owner-dashboard">
+    <div class="sidebar-menu-icon"><span class="fa fa-th"></span></div>
+    <div class="sidebar">
+      <div class="user-details">
+        <div class="user-name">{{ user.name }}</div>
+        <div class="user-role">owner</div>
+      </div>
+      <div class="nav-list">
+        <div class="list">
+          <a href="#introSection"><span class="links-name"><span class="fa fa-clipboard-list icon"></span>Dashboard</span></a>
+        </div>
+        <div class="list">
+          <a href="#rooms"><span class="links-name"><span class="fa fa-hotel icon"></span>Property</span></a>
+        </div>
+      </div>
+    </div>
+
+    <section id="introSection" class="intro-section">
+      <div class="container">
+        <div>
+          <h3>Welcome to Booking portal</h3>
+        </div>
+      </div>
+    </section>
+
+      <section id="rooms" class="rooms-section">
+        <div class="container">
+          <div class="row align-center">
+            <div class="col-8"><button class="btn btn-dark" data-toggle="modal" data-target="#modalAddProperty"><span class="fa fa-plus"></span> AddProperty</button></div>
+            <div class="col-4"><button class="btn rounded-circle btn-dark"><span class="fa fa-bell"></span></button></div>
+          </div>
+        </div>
+        {% include 'Owner/add-property.twig' %}
+
+        <table class="table table-hover">
+          <thead>
+          <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+          </thead>
+          <tbody>
+            {% for property in properties  %}
+              <tr>
+                <td data-title="Name">{{ property.name }}</td>
+                <td data-title="Type">{{ property.type }}</td>
+                <td data-title="Status">{{ property.status  == 1 ? 'Active' : 'Disabled'}}</td>
+                <td data-title="View"><button class="btn btn-dark btn-sm" type="button"><span class="fa fa-eye"></span>View</button></td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </section>
+  </div>
+  <div class="loading-overlay">
+    <div class="loading" data-loading-text="Registering..."></div>
+  </div>
+{% endblock %}

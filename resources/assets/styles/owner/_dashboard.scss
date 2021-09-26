@@ -1,0 +1,142 @@
+.owner-dashboard {
+	left: 200px;
+	width: calc(100% - 200px);
+	position: relative;
+
+	section {
+		padding-top: 5vh;
+		min-height: 95vh;
+	}
+
+	.intro-section {
+		h3 {
+			text-align: center;
+		}
+	}
+
+	.rooms-section {
+		#modalAddProperty {
+			.modal-body {
+				background: $form-background;
+
+				.form {
+					box-shadow: none;
+				}
+			}
+		}
+
+		.table {
+			margin-top: 40px;
+		}
+	}
+}
+
+.sidebar-menu-icon {
+	position: fixed;
+	display: none;
+	right: 25px;
+	top: 25px;
+	font-size: 25px;
+	background: $secondary-color;
+	color: white;
+	width: 40px;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 25px;
+}
+
+.sidebar {
+	color: white;
+	position: fixed;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 200px;
+	background: $secondary-color;
+	padding: 6px 14px;
+	z-index: 999;
+	transition: all 0.5s ease;
+
+	.user-details {
+		height: 100px;
+		text-align: center;
+		border-bottom: 2px dashed;
+
+		.user-name {
+			font-size: 25px;
+		}
+		.user-role {
+			font-size: 20px;
+		}
+	}
+	.nav-list {
+		margin-top: 20px;
+		height: 100%;
+	}
+
+	.list {
+		position: relative;
+		margin: 8px 0;
+		list-style: none;
+
+		a {
+			display: flex;
+			height: 100%;
+			width: 100%;
+			text-decoration: none;
+			background: $secondary-color;
+
+			.links-name {
+				color: #fff;
+				height: 40px;
+				width: 100%;
+				min-width: 50px;
+				font-size: 20px;
+				line-height: 40px;
+				border-radius: 12px;
+				transition: all 0.4s ease;
+				padding-left: 15px;
+
+				&:hover {
+					background: #FFF;
+					color: $secondary-color;
+				}
+				.icon {
+					padding-right: 10px;
+					font-size: 16px;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	.side-bar-overlay {
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		position: absolute;
+		z-index: 996;
+		background: rgba(0, 0, 0, 0.40);
+	}
+
+	.owner-dashboard {
+		left: 0;
+		width: 100%;
+		position: relative;
+	}
+
+	.sidebar {
+		left: -250px;
+
+		&.open {
+			left: 0;
+		}
+	}
+
+	.sidebar-menu-icon {
+		display: block;
+	}
+}

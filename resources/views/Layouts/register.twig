@@ -1,0 +1,70 @@
+{% extends 'template/default.twig' %}
+{% block title %}Registration{% endblock %}
+{% block page %}Registraion Page{% endblock %}
+{% block content %}
+  {%  include'template/navigation.twig' with  {'navlink' : false } %}
+  <section class="register-form">
+    <div class="container">
+      <div class="fix-top"></div>
+        <div class="row">
+          <div class="form col-md-8">
+            <h2 class="center">Create Account</h2>
+            <form action="/register" method="post" id="frmRegistration">
+              <div class="form-group required">
+                <div class="input-group required" data-message="Fullname should be entered">
+                  <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                  <input type="text" class="form-control" name="txFullName" placeholder="Enter Your Name">
+                  <span class="error-box"></span>
+                </div>
+                <div class="input-group required" data-message="Email should be entered">
+                  <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                  <input type="email" name="txtEmail" class="form-control" placeholder=" Enter Your Email Address">
+                  <span class="error-box"></span>
+                </div>
+                <div class="input-group required" data-message="Phone should be entered">
+                  <span class="input-group-addon"><i class="fa  fa-phone"></i></span>
+                  <input type="text" name="txtPhone" class="form-control" placeholder="Enter Your Phone Number">
+                  <span class="error-box"></span>
+                </div>
+                <div class="input-group required" data-message="Password should be entered">
+                  <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                  <input type="password" name="txtPassword" class="form-control" placeholder="Enter Your Password">
+                  <span class="fa fa-eye-slash input-group-addon pass" ></span>
+                  <span class="error-box"></span>
+                </div>
+                <div class="input-group required" data-message="Confirm password should be entered">
+                  <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                  <input type="password" class="form-control" name="txtConfirmPassword" placeholder="Enter Again Your Password">
+                  <span class="fa fa-eye-slash input-group-addon pass"></span>
+                  <span class="error-box"></span>
+                </div>
+                <input type="hidden" name="token">
+                <input type="hidden" name="txtPageRole" value="owner">
+                <button type="button" id="register" class="float-right btn btn-dark">Register</button>
+              </div>
+            </form>
+            <p>Already Registered? <a href="/login">Login here</a> </p>
+          </div>
+        </div>
+      </div>
+  </section>
+  <section class="confirm-email">
+    <div class="modal fade" id="modalEmailConfirmation" tabindex="-1" role="dialog" aria-labelledby="modalEmailConfirmationTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+           <div class="modal-body">
+             <h2>Registration Successful</h2>
+             <p>
+               We just sent a confirmation link to <span class="email"> </span>. Verify your address and we'll get you all set up for your account!
+             </p>
+             <button type="button" class="btn btn-dark btn-block" data-dismiss="modal">Close</button>
+           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="loading-overlay">
+    <div class="loading" data-loading-text="Registering..."></div>
+  </div>
+{% endblock %}
