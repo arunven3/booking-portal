@@ -25,7 +25,7 @@ commands :
 
 " php ../vendor/bin/doctrine orm:schema-tool:update " - this commmand used to update the database table if the database aleady a defined structure this commmand used to update  the strucure
 
-" php ../vendor/bin/doctrine orm:schema-tool:update " --force if the previous commmands not works try to use with force it will updates table schema
+" php ../vendor/bin/doctrine orm:schema-tool:update --force " if the previous commmands not works try to use with force it will updates table schema
 
 Database relates php class files are stored in th locayion App/Entities and App/Repositories
 App/Entities has the files that contains full database schema informations like table name, column name, column type, keys name etc.. 
