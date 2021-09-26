@@ -1,0 +1,25 @@
+{
+    "autoload": {
+        "psr-4": {
+            "App\\": "App",
+            "Bootstrap\\": "Bootstrap"
+        },
+        "classmap": [
+            "App/",
+            "Bootstrap/"
+        ]
+
+    },
+    "require": {
+        "twig/twig": "^3.0",
+        "altorouter/altorouter": "^1.2",
+		"doctrine/orm": "^2.9",
+        "symfony/cache": "^5.3",
+        "phpmailer/phpmailer": "^6.5",
+        "cache/apcu-adapter": "^1.1",
+        "doctrine/cache": "1.12.1",
+        "doctrine/common": "^3.0.3",
+        "doctrine/dbal": "2.*",
+        "stymiee/php-simple-encryption": "^1"
+    }
+}

@@ -1,0 +1,40 @@
+{% extends 'template/default.twig' %}
+{% block page_tittle %}Login{% endblock %}
+{% block page %}Login Page{% endblock %}
+{% block content %}
+  {%  include'template/navigation.twig' with  {'navlink' : false } %}
+  <section class="login-form">
+    <div class="container">
+      <div class="fix-top"></div>
+      <div class="row">
+        <div class="form">
+          <h2 class="center">Login To Your Account</h2>
+          <form autocomplete="off" id="frmLogin">
+            <div class="form-group">
+              <div class="input-group required" data-message="Email should be entered">
+                <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                <input type="email" class="form-control" name="txtEmail" placeholder="Enter Email ID">
+                <span class="error-box"></span>
+              </div>
+               <div class="input-group required" data-message="Password should be entered">
+                <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                <input type="password" class="form-control" value="" name="txtPassword" placeholder="Enter Password">
+                <span class="fa fa-eye-slash input-group-addon pass" ></span>
+                 <span class="error-box"></span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-4">
+                <button type="button" data-role="submit" class="btn btn-dark btn-lg">Sign In</button>
+              </div>
+              <p class="right"> Not a registered user? <a href="/register">Register here</a> </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="loading-overlay">
+    <div class="loading" data-loading-text="Checking&nbsp;&nbsp;Credentials..."></div>
+  </div>
+{% endblock %}
