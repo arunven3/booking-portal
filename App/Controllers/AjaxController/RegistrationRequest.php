@@ -6,7 +6,6 @@ namespace App\Controllers\AjaxController;
 use App\Classes\DataCheck;
 use App\Classes\Email\SendVerificationLink;
 use App\Classes\Token;
-use App\Controllers\Email\ConfirmationEmail;
 use App\Repository\PropertiesRepository;
 use App\Repository\UserDetailsRepository;
 
@@ -23,6 +22,7 @@ class RegistrationRequest
         $data['password'] = $check->require($_POST['password']);
         $data['role'] = $check->require($_POST['role']);
         $data['createdDate'] = time();
+        $data['mode'] = "create";
 
         $token = Token::generate($data['email'], 'somekeytext');
 

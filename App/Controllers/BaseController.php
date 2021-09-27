@@ -10,9 +10,6 @@ class BaseController
 
     /**
      * @param AltoRouter $router
-     * @throws \Twig\Error\LoaderError
-     * @throws \Twig\Error\RuntimeError
-     * @throws \Twig\Error\SyntaxError
      */
     public static function to(AltoRouter $router)
     {
@@ -21,7 +18,7 @@ class BaseController
         if (self::$match == false)
         {
             header($_SERVER['SERVER_PROTOCOL'].'404 Not Found');
-            TwigLoader::load("error/404.twig");
+            TwigLoader::load("Error/404.twig");
             exit;
         }
         self::$match["params"] = (!empty(self::$match["params"])) ? self::$match["params"] : [];

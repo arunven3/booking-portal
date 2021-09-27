@@ -29,6 +29,11 @@
 			margin-top: 40px;
 		}
 	}
+	.form {
+		box-shadow: none;
+		border: none;
+		border-radius: 0;
+	}
 }
 
 .sidebar-menu-icon {
@@ -111,7 +116,7 @@
 	}
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (max-width: 768px) {
 	.side-bar-overlay {
 		top: 0;
 		left: 0;

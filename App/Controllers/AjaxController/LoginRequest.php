@@ -3,11 +3,7 @@
 namespace App\Controllers\AjaxController;
 
 use App\Classes\DataCheck;
-use App\Classes\Email\EmailCredentials;
-use App\Classes\Email\SendVerificationLink;
 use App\Repository\UserCredentialsRepository;
-use Bootstrap\Doctrine;
-use App\Entities\UserCredentials;
 
 class LoginRequest
 {

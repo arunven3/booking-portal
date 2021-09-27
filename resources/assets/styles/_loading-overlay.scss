@@ -3,7 +3,7 @@
 	left: 0;
 	bottom: 0;
 	right: 0;
-	position: absolute;
+	position: fixed;
 	z-index: 9998;
 	background: rgba(0, 0, 0, 0.60);
 	visibility: hidden;
@@ -33,7 +33,7 @@
 			opacity: 1;
 			color: #faebd7ff;
 			overflow: hidden;
-			position: absolute;
+			position: fixed;
 			content: attr(data-loading-text);
 			animation: loading 5s infinite;
 		}

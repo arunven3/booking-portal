@@ -16,6 +16,9 @@
         <div class="list">
           <a href="#rooms"><span class="links-name"><span class="fa fa-hotel icon"></span>Property</span></a>
         </div>
+        <div class="list">
+          <a href="#editUserDetails"><span class="links-name"><span class="fa fa-user-edit icon"></span>Edit profile</span></a>
+        </div>
       </div>
     </div>
 
@@ -57,6 +60,43 @@
           </tbody>
         </table>
       </section>
+
+
+    <section id="editUserDetails" class="edit-user-details">
+      <div class="container">
+          <div class="row">
+            <div class="form col-md-8">
+              <h2 class="center">Edit Account details</h2>
+              <form action="/register" method="post" id="frmUserDetailsEdit">
+                <div class="form-group required">
+                  <div class="input-group required" data-message="Fullname should be entered">
+                    <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                    <input type="text" class="form-control" name="txFullName" value="{{ user.name }}" placeholder="Enter Your Name">
+                    <span class="error-box"></span>
+                  </div>
+                  <div class="input-group required" data-message="Email should be entered">
+                    <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                    <input type="email" name="txtEmail" class="form-control" placeholder=" Enter Your Email Address" value="{{ user .email }}">
+                    <span class="error-box"></span>
+                  </div>
+                  <div class="input-group required" data-message="Phone should be entered">
+                    <span class="input-group-addon"><i class="fa  fa-phone"></i></span>
+                    <input type="text" name="txtPhone" class="form-control" placeholder="Enter Your Phone Number" value="{{ user.phone }}">
+                    <span class="error-box"></span>
+                  </div>
+                  <div class="input-group required" data-message="Password should be entered">
+                    <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                    <input type="password" name="txtPassword" class="form-control" placeholder="Enter Your Password" value="{{ user.password }}">
+                    <span class="fa fa-eye-slash input-group-addon pass" ></span>
+                    <span class="error-box"></span>
+                  </div>
+                  <button type="button" data-role="user-details-submit" class="float-right btn btn-dark">Edit Details</button>
+                </div>
+              </form>
+            </div>
+        </div>
+      </div>
+    </section>
   </div>
   <div class="loading-overlay">
     <div class="loading" data-loading-text="Registering..."></div>

@@ -22,7 +22,7 @@ class Properties
 
     /**
      * @var string
-     * @ORM\Column(type="string", name="email", length=50, unique="true")
+     * @ORM\Column(type="string", name="email", length=50)
      */
     private $email;
 

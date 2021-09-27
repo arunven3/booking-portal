@@ -24,20 +24,27 @@ class UserDetailsRepository extends \Doctrine\ORM\EntityRepository
         $em = Doctrine::getEntityManager();
         $userDetailsRepository = $em->getRepository('bookingportal:UserDetails');
 
-        $userDetails = new UserDetails();
+        if ($data['mode'] == "create") {
+            $userDetails = new UserDetails();
+            $userDetails->setCreatedDate($data['createdDate']);
+            $userDetails->setRole($data['role']);
+        }
+        else {
+            $userDetails = $userDetailsRepository->findOneBy(['email' => $_SESSION['email']]);
+            $userDetails->setUpdatedDate($data['updatedDate']);
+        }
+
         $userDetails->setName($data['name']);
         $userDetails->setEmail($data['email']);
         $userDetails->setPhone($data['phone']);
         $userDetails->setPassword($data['password']);
-        $userDetails->setRole($data['role']);
-        $userDetails->setCreatedDate($data['createdDate']);
         $userDetails->setVerified(false);
         $userDetails->setStatus(true);
 
         try {
-            $em->persist($userDetails);
-            $em->flush();
+            $data['mode'] == "create" ? $em->persist($userDetails) : $em->merge($userDetails);
 
+            $em->flush();
             return [
                 'success' => 'true',
                 'email' => $data['email']
@@ -105,7 +112,7 @@ class UserDetailsRepository extends \Doctrine\ORM\EntityRepository
     {
         $em = Doctrine::getEntityManager();
 
-        return $em->getRepository('bookingportal:UserDetails')->findBy(['name' => 'ASC'],['email' => $email]);
+        return $em->getRepository('bookingportal:UserDetails')->findOneBy(['email' => $email]);
     }
 
     /**

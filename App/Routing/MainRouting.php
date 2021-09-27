@@ -13,7 +13,6 @@ $router->map('GET', '/login', 'App\Controllers\Controller@login', 'login');
 $router->map('POST', '/login','App\Controllers\AjaxController\LoginRequest@init', 'login-request');
 $router->map('GET', '/logout','App\Controllers\Controller@logout', 'logout');
 
-
 $router->map('GET', '/register','App\Controllers\Controller@register', 'register');
 $router->map('POST', '/register','App\Controllers\AjaxController\RegistrationRequest@init', 'registration-request');
 
@@ -24,3 +23,5 @@ $router->map('GET', '/register/confirmation','App\Controllers\AjaxController\Reg
 $router->map('GET', '/confirmation/email','App\Controllers\Controller@mailConfirmation', 'email-confirmation');
 
 $router->map('GET', '/dashboard','App\Controllers\controller@dashboard', 'user-dashboard');
+
+$router->map('POST', '/update/userDetails','App\Controllers\AjaxController\EditDetailsRequest@editUserDetails', 'user-details-edit-request');

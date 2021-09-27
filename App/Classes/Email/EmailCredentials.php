@@ -11,6 +11,7 @@ class EmailCredentials
      */
     public static function get(): array
     {
+        //only for testing purpose
         return [
             'domain' => 'demohost.online',
             'id' => 'Booking_Portal',
