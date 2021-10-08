@@ -29,6 +29,12 @@ class Controller
     {
         TwigLoader::load("Email/send-confirmation.twig");
     }
+
+    public function calender()
+    {
+        TwigLoader::load("calender.twig");
+    }
+
     public function logout() {
         SecurityCheck::logout();
     }

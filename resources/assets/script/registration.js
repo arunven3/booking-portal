@@ -37,5 +37,9 @@ $( document ).ready(function() {
         frmRegistration.save();
       }
     });
+
+    $('button[data-role="closeSuccessMessage"]').on('click', function () {
+      window.location.href = '/login';
+    })
   }
 });

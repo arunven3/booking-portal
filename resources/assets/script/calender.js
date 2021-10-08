@@ -37,7 +37,7 @@ const calender = {
 
 $( document ).ready(function() {
   if ($('body').data('page') === 'booking-availablity') {
-    calender.init('#myCalendar');
+    calender.init('#availablityCalender');
     calender.range(0, 1);
     $('button[data-calendar-toggle="previous"]').prop('disabled', true);
   }

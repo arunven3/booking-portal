@@ -25,3 +25,5 @@ $router->map('GET', '/confirmation/email','App\Controllers\Controller@mailConfir
 $router->map('GET', '/dashboard','App\Controllers\controller@dashboard', 'user-dashboard');
 
 $router->map('POST', '/update/userDetails','App\Controllers\AjaxController\EditDetailsRequest@editUserDetails', 'user-details-edit-request');
+
+$router->map('GET', '/calender','App\Controllers\Controller@calender', 'calender-view');

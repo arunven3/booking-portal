@@ -14,7 +14,7 @@ class Token
     {
         try {
             $encryption = Encryption::getEncryptionObject();
-            $iv = 'trytocrack'.date('dh').'..';
+            $iv = 'TryToCrackThis..';
             return $encryption->encrypt($data, $key, $iv);
         }
         catch (EncryptionException $e) {
@@ -26,7 +26,7 @@ class Token
     {
         try {
             $encryption = Encryption::getEncryptionObject();
-            $iv = 'trytocrack'.date('dh').'..';
+            $iv = 'TryToCrackThis..';
             return $encryption->decrypt($data, $key, $iv);
         }
         catch (EncryptionException $e) {

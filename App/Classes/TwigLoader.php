@@ -16,7 +16,9 @@ class TwigLoader
         $loader = new Twig\Loader\FilesystemLoader(APP_URL . DS .'resources' . DS . 'views' . DS .'Layouts');
 
         $cache = APP_URL . DS . 'bootstrap' . DS . 'cache';
-        $twig = new Twig\Environment($loader, ['cache' => $cache]);
+//        $twig = new Twig\Environment($loader, ['cache' => $cache]);
+        $twig = new Twig\Environment($loader);
+
         return $twig;
     }
 
