@@ -7,7 +7,7 @@ $appPath = dirname(__DIR__, 2);
 
 require_once $appPath . DS . 'Bootstrap' . DS . 'doctrine.php';
 
-$container = new Doctrine();
-$em = $container->getEntityManager();
+$doctrine = new Doctrine();
+$em = $doctrine->getEntityManager();
 
 return ConsoleRunner::createHelperSet($em);
